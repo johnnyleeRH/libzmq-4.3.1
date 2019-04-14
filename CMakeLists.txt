@@ -632,6 +632,7 @@ set(cxx-sources
   dgram.cpp
   dist.cpp
   epoll.cpp
+  hobotmq.cpp
   err.cpp
   fq.cpp
   io_object.cpp

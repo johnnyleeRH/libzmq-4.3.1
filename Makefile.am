@@ -257,7 +257,8 @@ src_libzmq_la_SOURCES = \
 	src/socket_poller.hpp \
 	src/zap_client.cpp \
 	src/zap_client.hpp \
-	src/zmq_draft.h
+	src/zmq_draft.h \
+        src/hobotmq.cpp
 
 if USE_WEPOLL
 src_libzmq_la_SOURCES += \
