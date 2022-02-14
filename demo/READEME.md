@@ -1,0 +1,3 @@
+- demo程序编译，直接在`demo`文件夹下面执行`make`, 会同时生成`client`和`server`两程序，需要重新编译的话，执行`make clean && make`
+- 程序的接口说明见`mq.h`
+- `client`和`server`程序执行时，需要将`libmq.so`所在的路径加入动态库path，如`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:libmq.so路径`

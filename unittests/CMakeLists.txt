@@ -35,7 +35,7 @@ foreach(test ${unittests})
     link_directories(${test} PRIVATE "${ZeroMQ_SOURCE_DIR}/../lib")
   endif()
 
-  target_link_libraries(${test} libzmq-static ${OPTIONAL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} unity)
+  target_link_libraries(${test} libmq-static ${OPTIONAL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} unity)
 
   if(RT_LIBRARY)
     target_link_libraries(${test} ${RT_LIBRARY})
@@ -49,9 +49,9 @@ foreach(test ${unittests})
 
   set_tests_properties(${test} PROPERTIES TIMEOUT 10)
 
-  # TODO prevent libzmq (non-static) being in the list of link libraries at all
+  # TODO prevent libmq (non-static) being in the list of link libraries at all
   get_target_property(LIBS ${test} LINK_LIBRARIES)
-  list(REMOVE_ITEM LIBS libzmq)
+  list(REMOVE_ITEM LIBS libmq)
   set_target_properties(${test} PROPERTIES LINK_LIBRARIES "${LIBS}")
 endforeach()
 

@@ -167,9 +167,9 @@ endif()
 
 # add library and include dirs for all targets
 if(BUILD_SHARED)
-  link_libraries(libzmq ${OPTIONAL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} unity)
+  link_libraries(libmq ${OPTIONAL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} unity)
 else()
-  link_libraries(libzmq-static ${OPTIONAL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} unity)
+  link_libraries(libmq-static ${OPTIONAL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} unity)
 endif()
 include_directories("${ZeroMQ_SOURCE_DIR}/../include" "${ZeroMQ_BINARY_DIR}")
 
@@ -191,7 +191,7 @@ foreach(test ${tests})
   if(WIN32)
     # This is the output for Debug dynamic builds on Visual Studio 6.0
     # You should provide the correct directory, don't know how to do it automatically
-    find_path(LIBZMQ_PATH "libzmq.lib" PATHS "../bin/Win32/Debug/v120/dynamic")
+    find_path(LIBZMQ_PATH "libmq.lib" PATHS "../bin/Win32/Debug/v120/dynamic")
     if(NOT ${LIBZMQ_PATH} STREQUAL "LIBZMQ_PATH-NOTFOUND")
       set_target_properties(${test} PROPERTIES LINK_FLAGS "/LIBPATH:${LIBZMQ_PATH}")
     endif()
