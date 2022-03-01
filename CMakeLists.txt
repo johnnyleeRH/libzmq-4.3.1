@@ -1083,8 +1083,8 @@ else()
     set_target_properties(libzmq PROPERTIES
       COMPILE_DEFINITIONS "DLL_EXPORT"
       PUBLIC_HEADER "${public_headers}"
-      VERSION "5.2.1"
-      SOVERSION "5"
+      #VERSION "5.2.1"
+      #SOVERSION "5"
       OUTPUT_NAME "zmq"
       PREFIX "lib")
     if(ZMQ_BUILD_FRAMEWORK)
